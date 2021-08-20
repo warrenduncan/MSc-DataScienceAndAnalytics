@@ -1,0 +1,178 @@
+/* ******** */
+/* Set font */
+/* ******** */
+body {
+    font-family: sans-serif;
+}
+
+.ui.centered.grid .centered.row.textViz {
+    text-align: left;
+}
+
+/* ********** */
+/* NAVBAR CSS */
+/* ********** */
+
+#navbar{
+    margin-top: 50px;
+    margin-bottom:0;
+    color: green;
+    box-shadow: none;
+    border: none;
+    -webkit-box-shadow: none;
+}
+
+.ui.center.menu .item {
+    color: grey;
+    font-size: 1.2em;
+    width: 130px;
+    text-align: center;
+    vertical-align: bottom;
+    display: inline-block;
+    padding: 10px 0;
+}
+
+
+.ui.center.menu .item:before {
+    background: none;
+}
+
+.ui.center.menu .item:hover {
+    color: #EE3B3B;
+    font-weight: 800;
+    background: none;
+}
+#navbar .item:after {
+    display:block;
+    content: '';
+    height: 15px;
+    border-bottom: solid 3px #EE3B3B;  
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;
+}
+#navbar .item:hover:after { 
+    transform: scaleX(1); 
+}
+#navbar .item.fromRight:after{
+    transform-origin:100% 50%; 
+}
+#navbar .item.fromLeft:after{
+    transform-origin:  0% 50%;
+}
+
+div.centered.row.textViz {
+    padding-top: 0;
+}
+
+h4 {
+    color: #EE3B3B;
+}
+
+/* ********** */
+/* OPTION BAR */
+/* ********** */
+.ui.item.menu, .ui.item.menu .item {
+    width: 75%;
+} 
+
+.ui.menu#optionBar .item {
+    font-size: 1rem;
+    color: grey;
+}
+
+.ui.menu#optionBar .active.item {
+    background: #EE3B3B;
+    color: white;
+}
+.ui.pointing.menu#optionBar .item:after {
+    background: #EE3B3B;
+}
+
+
+/* ***************** */
+/* Start Race Button */
+/* ***************** */
+.ui.animated.button {
+    background: #EE3B3B;
+    color: white;
+    width: 300px;
+    min-height: 1em;
+    position: relative;
+    margin-bottom: 11px;
+}
+
+.ui.animated.button:hover {
+    background: green;
+    color: white;
+}
+
+.ui.yellow.message {
+    width: 50%;
+    height: 3.4em;
+    margin: 0 25%;
+    visibility: 'hidden';
+}
+
+#raceNumberSection {
+    padding-bottom: 0;
+}
+
+
+/* *********************** */
+/* Nodes in Circle Packing */
+/* *********************** */
+.node {
+    cursor: pointer;
+}
+
+.F1label:hover {
+    cursor: pointer;
+}
+  
+.constNode:hover {
+    stroke: #000;
+    stroke-width: 1.5px;
+}
+
+.constlabel {
+    text-anchor: middle;
+}
+
+.constlabel,
+.node--root,
+.node--leaf {
+    pointer-events: none;
+}
+
+/* **************** */
+/* Information Card */
+/* **************** */
+.ui.large.message{
+    width: 350px;
+    height: 250px;
+    background-color: #EE3B3B;
+    color: white;
+    box-shadow: none;
+}
+
+#defaultInfoCard {
+    margin: 25% 0;
+    text-align: center;
+}
+
+/* ****************************** */
+/* Slider for both visualisations */
+/* ****************************** */
+#slider {
+    cursor: pointer;
+}
+
+#dslider {
+    width: 50%;
+    margin: 0 25%;
+}
+
+#dslider .noUi-connect {
+    background: #EE3B3B;
+}
+

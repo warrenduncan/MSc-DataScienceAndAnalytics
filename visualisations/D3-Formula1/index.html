@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+    <!-- CSS Styling -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.0/nouislider.min.css">
+
+
+    <!-- Javascript Semantic -->
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script src="//d3js.org/d3.v6.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-array@3"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.0/nouislider.min.js"></script>
+    
+
+    <!-- Adding J-Query -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>Formula 1</title>
+</head>
+<body>
+
+<!-- Grid for writting and visualistion -->
+<div class="ui centered grid container" >
+
+    <!-- Navbar/Menu Item -->
+    <div class="ui center four item menu" id = "navbar">
+        <a class = "item" href="index.html">
+            Home
+        </a>
+        <a class = "item" href="constructors.html">
+            Constructors
+        </a>
+        <a class = "item" href="drivers.html">
+            Drivers
+        </a>
+        <a class = "item" href="references.html">
+            References
+        </a>
+    </div>
+
+    <!-- Writtin portion -->
+    <div class="centered row textViz">
+        <p>
+            <h4>Overview</h4>
+            The following uses the latest available Formula 1 World Championship data from 1950 to 2021. The term ‘constructor’ refers to the teams (Ferrari, Alfa Romeo, Red Bull, …etc) and the term ‘driver’ refers to the individuals that drive for each team (Niki Lauda, Jenson Button, …etc). In terms of navigation each visualisation is given on a new page which can be accessed, and navigated to, via the menu bar at the top of each page. 
+            <h4>Constructors</h4>
+            The first visualisation ‘Constructors’ acts as an introduction to the world of Formula 1, providing insight into all the constructors, their drivers, and their legacy over time. This visual also illustrates the current ‘market share’ each constructor and driver has of the relevant performance metric.
+            <h4>Drivers</h4>
+            The second visualisation showcases the performance of all drivers over the entire history of Formula 1 and develops a top ten list (or fewer) of the relevant performance metric. Since different drivers have existed at different times in history, their performance is determined on a race-by-race basis which starts from each driver’s 50th race and ends at their 250th. Given that there are few drivers who have completed this many races, towards the end of the animation the number of drivers in the list naturally starts to decline.
+        </p>
+    </div>
+</div>
+    
+
+</body>
+</html>

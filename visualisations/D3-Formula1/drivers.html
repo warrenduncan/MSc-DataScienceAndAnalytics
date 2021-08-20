@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+    <!-- CSS Styling -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+
+
+    <!-- Javascript Semantic -->
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script src="//d3js.org/d3.v6.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.0/nouislider.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.2/tinycolor.min.js" integrity="sha512-+aXA9mgbUvFe0ToTlbt8/3vT7+nOgUmFw29wfFCsGoh8AZMRSU0p4WtOvC1vkF2JBrndPN2TuNZsHPAKPPxe8Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Adding J-Query -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>Formula 1</title>
+</head>
+<body>
+
+<!-- Grid for writting and visualistion -->
+<div class="ui centered grid container" >
+
+    <!-- Navbar/Menu Item -->
+    <div class="ui center four item menu" id = "navbar">
+        <a class = "item" href="index.html">
+            Home
+        </a>
+        <a class = "item" href="constructors.html">
+            Constructors
+        </a>
+        <a class = "item" href="drivers.html">
+            Drivers
+        </a>
+        <a class = "item" href="references.html">
+            References
+        </a>
+    </div>
+
+    <!-- Writtin portion -->
+    <div class="centered row textViz">
+        <p>
+            <h4>Visualisation Elements</h4>
+            <ul>
+                <li>
+                    <strong><i>Race Slider</i></strong>: An adjustable slider which provides the ability to adjust the number or races under comparison. This also serves as the starting number of races for the animation.
+                </li>
+                <li>
+                    <strong><i>Race Window</i></strong>: Displays the race number currently under observation.
+                </li>
+                <li>
+                    <strong><i>Race Button</i></strong>: Initiates the animation/race and begins at the number of races displayed in the race window.
+                </li>
+                <li>
+                    <strong><i>Animation</i></strong>: Once the animation/race starts (after clicking the ‘Race button’), it can be paused by clicking anywhere on the page or restarted by changing the performance metric.  
+                </li>
+                <li>
+                    <strong><i>Performance Metrics</i></strong>: Performance for each metric is associated with the driver and is calculated on a race-by-race basis:
+                    <ul>
+                        <li>
+                            <i>Race Wins</i>: The number of 1st place positions acheived by the driver after completing the displayed number of races.
+                        </li>
+                        <li>
+                            <i>Podium Finishes</i>: The number of podium finishes acheived by the driver after completing the displayed number of races.
+                        </li>
+                        <li>
+                            <i>Total Points Scored</i>: The total points scored by the driver after completing the displayed number of races.
+                        </li>
+                        <li>
+                            <i>Qualifying Wins</i>: The number of qualifying round wins (or pole position starts) acheived by the driver after completing the displayed number of races.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h4>Considerations</h4>
+            <ul>
+                <li>
+                    <strong><i>Purpose</i></strong>: The visualisation is designed to be a race of comparison between the drivers. Thus, the metrics can be directly compared and the length of the bars graphically illustrate the performance of the respective drivers.
+                </li>
+                <li>
+                    <strong><i>Basis of Comparison</i></strong>: The visualisation is based on the number of races completed and does not consider time. So, although drivers may have completed the same number of races or raced for the same constructor, they may have not competed or raced for the same constructor at the same time.
+                </li>
+                <li>
+                    <strong><i>Constructor Representation</i></strong>: Although the constructors are represented, the metric performances in the visualisation are only relevant to the drivers and their careers regardless of the constructors they may have raced for. Therefore, driver performance is not necessarily representative of the constructor’s performance. 
+                </li>
+            </ul>
+        </p>
+    </div>
+
+    <!-- Visualisation Dashboard -->
+    <div class="centered row">
+        <br>
+        <div class="ui four item pointing menu" id = 'optionBar'>
+            <a class="item active" name = 'winCount'>Race Wins</a>
+            <a class="item" name = 'podCount'>Podium Finishes</a>
+            <a class="item" name = 'totalPoints'>Total Points Scored</a>
+            <a class="item" name = 'qWinCount'>Qualifying Wins</a>
+        </div>
+    </div>
+
+    <!-- Section to display the number of races -->
+    <div class="two column centered row" id = "raceNumberSection">
+        <div class="ui medium header">Number of Races</div>
+        <div class="ui large label">
+            <div class="ui label">
+                Number of Races:
+            </div>
+            50
+            <input type="range" value = 1 min= 50 max = 250 id = 'slider'>
+            250
+        </div>
+        <div class="ui labeled input">
+            <div class="ui label">
+               Race:
+            </div>
+            <div class="ui basic label">
+                <span  id = 'racesValue'></span>
+            </div>
+        </div>
+        <br>
+        <br>
+        <!-- Button to start the race -->
+        <div class="ui animated button" tabindex="0" id = 'startRaceButton'>
+            <div class="visible content">Click to Start Racing</div>
+            <div class="hidden content">
+                <i class="flag checkered icon" id = 'raceButtonIcon'></i>
+            </div>
+        </div>
+        <!-- Hiddent Message that appears once the race has started -->
+        <div class="ui yellow hidden message" id = "endRaceMessage">
+            <div class="header">
+                Click anywhere to pause the race!
+            </div>
+        </div>
+    </div>
+    
+    <!-- visualisation -->
+    <div class="row" id = "visRow">
+        <div id="vis"></div>
+    </div>
+</div>
+    
+
+<!-- Javascript file -->
+<script src="js/javascript.js"></script>
+<script src="js/D3-drivers.js"></script>
+
+    
+</script>
+
+</body>
+</html>

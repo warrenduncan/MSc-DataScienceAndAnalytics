@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+    <!-- CSS Styling -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.0/nouislider.min.css">
+
+
+    <!-- Javascript Semantic -->
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script src="//d3js.org/d3.v6.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-array@3"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.0/nouislider.min.js"></script>
+    
+
+    <!-- Adding J-Query -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <title>Formula 1</title>
+</head>
+<body>
+
+<!-- Grid for writting and visualistion -->
+<div class="ui centered grid container" >
+
+    <!-- Navbar/Menu Item -->
+    <div class="ui center four item menu" id = "navbar">
+        <a class = "item" href="index.html">
+            Home
+        </a>
+        <a class = "item" href="constructors.html">
+            Constructors
+        </a>
+        <a class = "item" href="drivers.html">
+            Drivers
+        </a>
+        <a class = "item" href="references.html">
+            References
+        </a>
+    </div>
+
+    <!-- Writtin portion -->
+    <div class=" centered row textViz">
+        <p>
+            <h4>Visualisation Elements</h4>
+            <ul>
+                <li>
+                    <strong><i>Date Range Slider</i></strong>: An adjustable double sided range slider (default min/max value of 1950/2021, repectively) which provides a means to adjust the timeframe of observation.
+                </li>
+                <li>
+                    <strong><i>Information Card</i></strong>: An information card is provided which more clearly (and in greater detail) showcases the information that is related to the object which is hovered over.
+                </li>
+                <li>
+                    <strong><i>Clickable Elements</i></strong>: The user can zoom in and out of the respective constructors by clicking on them.
+                </li>
+                <li>
+                    <strong><i>Performance Metrics</i></strong>: Perofrmance for each metric is calculated by combining the acheivements of all drivers while they raced for the relevant constructor:
+                    <ul>
+                        <li>
+                            <i>Total Points</i>: The total points acheived by the constructors and drivers.
+                        </li>
+                        <li>
+                            <i>Race Wins</i>: The number of 1st place positions achieved by the constructors and drivers.
+                        </li>
+                        <li>
+                            <i>Top Ten (excl wins)</i>: The number of points scoring positions (top 10), excluding wins, acheived by the constructors and drivers.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h4>Considerations</h4>
+            <ul>
+                <li>
+                    <strong><i>Purpose</i></strong>: The purpose of this graphic is to provide users with insight into the constructors and drivers who have participated in the sport. In this sense it is prudent to establish that, although numerical ratios are given, the visualisation is first and foremost exploratory by nature and not neccessarily a comparator.
+                </li>
+                <li>
+                    <strong><i>Sizing</i></strong>: Certain texts and graphics are small due to their metric performances. Information pertaining to these items can be seen more clearly in the information card provided.
+                </li>
+                <li>
+                    <strong><i>Constructor Lifetime</i></strong>: Constructors have had varying lifetimes across the years. Thus, a larger appearance can be indicative of a longer lifetime rather than a better performance.
+                </li>
+                <li>
+                    <strong><i>Performance</i></strong>: A metric ratio (per race) is provided in the information card, and although more standardising, this ratio cannot always be considered fair as it could potentially favour or disfavour constructors and drivers who have completed fewer or more races.
+                </li>
+                <li>
+                    <strong><i>Drivers</i></strong>: Naturally, drivers race for multiple constructors in their career, so it is expected that drivers will appear in multiple constructor circles. However, it is important to note that the performance of each driver (illustrated in each constructor cirlce) will only relate to their performance while they were racing for that particular constructor.
+                </li>
+            </ul>
+        </p>
+    </div>
+
+
+    <!-- Visualisation Dashboard -->
+    <div class="centered row">
+        <br>
+        <div class="ui three item pointing menu" id = 'optionBar'>
+            <a class="item active" name = 'standPoints'>Total Points</a>
+            <a class="item" name = 'wins'>Race Wins</a>
+            <a class="item" name = 'pointPos'>Top Ten (excl Wins)</a>
+        </div>
+    </div>
+
+    <!-- Create slider to change the date range -->
+    <div class="two column centered row">
+        <div class="ui medium header">Time Horizon</div>
+        <br>
+        <div id="dslider"></div>
+        <br>
+    </div>
+    
+    
+    <!-- visualisation -->
+    <div class="double stackable two column middle aligned row" id = "visRow">
+        <div class="column">
+            <svg width="500" height="500"></svg>
+        </div>
+        <!-- Information Card -->
+        <div class="left aligned centered column">
+            <div class="ui large middle aligned message" id = 'infoCard'>
+                <h1 id='defaultInfoCard'><i>Hover over entity to see information</i></h1>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+<!-- Javascript file -->
+<script src="js/javascript.js"></script>
+<script src="js/D3-constructors.js"></script>
+
+
+</body>
+</html>
