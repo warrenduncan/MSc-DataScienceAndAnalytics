@@ -19,7 +19,7 @@ Python linraries used to preprocess the data and build the models include: sklea
 ##################################################################################################################
 
 FILE DESCRIPTIONS:
- 	* e-commerce_data.csv: The csv file of data, as received by the university.
+ 	* e-commerce_data.csv: The csv file of data, which is freely available on Kaggle.
  	* purchase-intention_code.ipynb: A jupyter notebook contataining all the code pertaining to the analysis,
 					 preprocessing, and model creation. All code is written in the Python 
 					 programming language.
