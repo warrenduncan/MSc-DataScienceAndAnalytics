@@ -14,5 +14,5 @@ The analysis uses linear regression and logistical regression, and is completed 
 FILE DESCRIPTIONS:
  	* CreditData_code.ipynb: A jupyter notebook containing all the code for the analysis, which was completed 
 				 using the R programming language. 
- 	* CreditData.xlsx: An excel spreadsheet containing the data used in the analysis.
+ 	* CreditData.xlsx: An excel spreadsheet containing the data used in the analysis, which is also freely available on Kaggle
 
