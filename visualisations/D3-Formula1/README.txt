@@ -1,17 +1,16 @@
 ##################################################################################################################
-######################################## FORMULA 1 VISUALISATION USING D3 ########################################
+################################################## INSTRUCTIONS ##################################################
 ##################################################################################################################
 
-The visualisation were primarily created using D3, however HTML, CSS, and Javascript were also ustilised. The 
-html pages can be run statically on a locally hosted server, with the index.html file acting as the intiation 
+The visualisation were primarily created using D3, however HTML, CSS, and Javascript were also utilised. The 
+html pages can be run statically on a locally hosted server, with the index.html file acting as the initiation 
 page for both visualisations. Information on index.html explains the visualisations and how they are presented. 
 
-However, each visualisation html page (drivers.html and constructors.html) can be run in isolation on a locally
-hosted server. Each page contains information that explains the nature of each graphic, and all the neccessary
-imports for that particular visualisation.
+Each visualisation html page (drivers.html and constructors.html) can be run in isolation. Thus, it is not
+a requirement that the visualisation is initiated using the index.html file.
 
 Certain elements of JQuery, CSS, Javascript, and D3 were imported using CDNS. Therefore, an internet connection 
-is required in order to ensure the correct functionality of the visualisations and that the appropriate fomratting 
+is required in order to ensure the correct functionality of the visualisations and that the appropriate formatting 
 is maintained.
 
 ##################################################################################################################
@@ -25,17 +24,25 @@ FILE DESCRIPTIONS:
 ##################################################################################################################
 
 DIRECTORY DESCRIPTIONS:
- 	* css: CSS file used in all html files:
-   	    	- style.css: For general styling and front-end development 
+ 	* css: a styling CSS file used in all html files:
+   	    	- style.css
 
- 	* js: Javascript files used in all the HTML files:
-	    	- javascript.js: For general styling and front-end development
-			- D3-constructors.js: D3 used to create the constructors visualisation
-			- D3-drivers.js: D3 used to create the drivers visualisation
+ 	* js: A javascript file used in all the HTML files:
+	    	- javascript.js
 
- 	* data: Contains two pre-processed databases, a jupyter notebook, and a folder with the sourced csv files. The 
-	 		The contents of this directory are as folllows: 
+ 	* data: Contains two pre-processed databases and a preprocessing , directory with sourced csv files. The 
+	 	The contents of this directory are as follows: 
 	    	- constHistory.csv: Final constructor csv file used in visualisations
 	     	- driverHistory.csv: Final driver csv file used in visualisations
-		  	- preprocessing-F1data.ipynb: notebook where data was preprocessed using the R programming language
-		  	- kaggle (directory): holds the csv files downloaded from Kaggle (see references.html)
+		- F1-data-preprocessing (directory): A preprocessing directory where data was preprocessed using 
+						   the R programming language. This directory contains the R 
+						   preprocessing file and the raw csv files. Contents of the
+						   directory are as follows:
+			+ F1-data-preprocessing.Rproj: The R project where the preprocessing was done.
+			+ data-preprocessing.R: The file containing the R code for preprocessing.
+			+ kaggle (directory): The directory which contains raw data. Contents of the directory
+					     are as follows:
+		  		> races.csv: latest data on F1 races.
+				> drivers.csv: latest data on F1 drivers.
+				> constructors.csv: latest data on F1 constructors.
+				> results.csv: latest data on F1 results.
